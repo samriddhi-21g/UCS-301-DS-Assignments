@@ -1,15 +1,16 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int main () {
+int main() {
     int n;
-    cout<<"Enter size of the array : ";
+    cout<<"Enter the size of the array : ";
     cin>>n;
     int arr[n];
-    cout<<"Enter array element : ";
+    cout<<"Enter array elements : ";
     for (int i=0; i<n; i++) {
         cin>>arr[i];
     }
+
     for (int i=0; i<n; i++) {
         for (int j=0; j<n-i-1; j++) {
             if (arr[j]>arr[j+1]) {
@@ -19,9 +20,12 @@ int main () {
             }
         }
     }
-    cout<<"Sorted array : ";
-    for (int i=0; i<n; i++) {
-        cout<<arr[i]<<" ";
+
+    int distinct = 1; // 1st element will always be distinct
+    for (int i=1; i<n; i++) {
+        if (arr[i-1]!=arr[i]) distinct++;
     }
+
+    cout<<"Number of distinct elements : "<<distinct;
     return 0;
 }
