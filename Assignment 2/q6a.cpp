@@ -1,3 +1,5 @@
+// Transposing Sparse Matrix
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -23,8 +25,11 @@ int main () {
         }
     }
 
-    int sparse[nonzero][3];
-    int k=0;
+    int sparse[nonzero+1][3];
+    sparse[0][2]=nonzero;
+    sparse[0][0]=n;
+    sparse[0][1]=m;
+    int k=1;
     for (int i=0; i<n; i++) {
         for (int j=0; j<m; j++) {
             if (mat[i][j]!=0) {
@@ -37,13 +42,13 @@ int main () {
     }
 
     //transposing
-    for (int i=0; i<nonzero; i++) {
+    for (int i=1; i<=nonzero; i++) {
         swap(sparse[i][0],sparse[i][1]);
     }
 
     //sort columns
-    for (int i=0; i<nonzero-1; i++) {
-        for (int j=0; j<nonzero-i-1; j++) {
+    for (int i=1; i<=nonzero-1; i++) {
+        for (int j=1; j<=nonzero-i; j++) {
             if (sparse[j][0]>sparse[j+1][0] || (sparse[j][0]==sparse[j+1][0] && sparse[j][1]>sparse[j+1][1])) {
                 swap (sparse[j][0],sparse[j+1][0]);
                 swap (sparse[j][1],sparse[j+1][1]);
@@ -52,7 +57,7 @@ int main () {
         }
     }
 
-    for (int i=0; i<nonzero; i++) {
+    for (int i=0; i<=nonzero; i++) {
         cout<<sparse[i][0]<<" "<<sparse[i][1]<<" "<<sparse[i][2]<<endl;
     }
 
