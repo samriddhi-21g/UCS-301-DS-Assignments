@@ -1,3 +1,5 @@
+// check if given tree is bst or not
+
 #include <iostream>
 using namespace std;
 

@@ -1,3 +1,6 @@
+// heap sort using min heap
+
+#include<bits/stdc++.h>
 using namespace std;
 
 // Function to heapify a subtree rooted at index i (for Min Heap)

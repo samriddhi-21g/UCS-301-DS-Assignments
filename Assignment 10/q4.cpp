@@ -1,3 +1,5 @@
+// prims algo using min heap for minimum spanning tree (greedy algo)
+
 #include<bits/stdc++.h>
 using namespace std;
 

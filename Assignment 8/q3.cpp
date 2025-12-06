@@ -1,3 +1,5 @@
+// Insert Node, Delete Node, max depth, min depth
+
 #include <iostream>
 using namespace std;
 
@@ -24,8 +26,8 @@ Node* insertNode (Node* root, int value) {
     if (root == NULL) {
         return new Node(value);
     } 
-    if (value<root->data) root->left = insert (root->left, value);
-    else if (value>root->data) root->right = insert (root->right, value);
+    if (value<root->data) root->left = insertNode (root->left, value);
+    else if (value>root->data) root->right = insertNode (root->right, value);
     else {
         cout<<"Duplicate value.";
     }
@@ -34,7 +36,6 @@ Node* insertNode (Node* root, int value) {
 
 Node* deleteNode (Node* root, int key) {
     if (root==NULL) {
-        cout<<"Tree is empty.\n";
         return root;
     }
     if (key<root->data) {
@@ -47,7 +48,7 @@ Node* deleteNode (Node* root, int key) {
             delete root;
             return temp;
         } else if (root->right == NULL) {
-            Node* temp = root->left;
+            Node* temp = root->left; 
             delete root;
             return temp;
         } 

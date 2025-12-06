@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 int main () {
     int mat1[100][100];
     int mat2[100][100];

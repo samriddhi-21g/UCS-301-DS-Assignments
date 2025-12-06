@@ -1,3 +1,5 @@
+// Heap Sort using max heap
+
 #include <iostream>
 using namespace std;
 
@@ -39,7 +41,7 @@ void heapSort(int arr[], int n) {
 }
 
 // Utility function to print array
-void printArray(int arr[], int n) {
+void printArray(int &arr[], int n) {
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
     cout << endl;

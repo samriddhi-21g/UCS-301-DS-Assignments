@@ -1,7 +1,9 @@
+// Dijkstra algo for shortest path to every node from the source
+
 #include<bits/stdc++.h>
 using namespace std;
 
-int dijkstra(int n, vector<pair<int,int>> adj[], int src) {
+vector<int> dijkstra(int n, vector<pair<int,int>> adj[], int src) {
     priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
     vector<int> dist(n, INT_MAX);
 
@@ -28,14 +30,7 @@ int dijkstra(int n, vector<pair<int,int>> adj[], int src) {
             }
         }
     }
-
-    // If you want to return all distances, return vector<int>
-    // But since your MST returns a single value, we return sum of distances:
-    int sum = 0;
-    for (int i = 0; i < n; i++) {
-        if (dist[i] != INT_MAX) sum += dist[i];
-    }
-    return sum;
+    return dist;
 }
 
 int main () {
@@ -51,7 +46,7 @@ int main () {
     }
 
     int src = 0; // Starting node
-    int distSum = dijkstra(n, adj, src);
+    vector<int> dist = dijkstra(n, adj, src);
     cout << "Sum of shortest distances from source = " << distSum;
 
     return 0;

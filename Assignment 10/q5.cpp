@@ -1,3 +1,5 @@
+// Kruskal Algo for minimum spanning tree
+
 #include<bits/stdc++.h>
 using namespace std;
 

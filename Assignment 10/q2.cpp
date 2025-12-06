@@ -1,3 +1,5 @@
+// breadth first traversal
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -22,7 +24,7 @@ vector<int> bfsOfGraph (int n, vector<int> adj[]) {
 }
 
 int main () {
-    int n,m;
+    int n,m;             // n = number of vertics, m= number of edges
     cin>>n>>m;
     vector<int> adj[n+1];
     for (int i=0; i<m; i++) {

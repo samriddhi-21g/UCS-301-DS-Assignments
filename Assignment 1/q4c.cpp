@@ -1,5 +1,8 @@
+// Transpose of a matrix
+
 #include <iostream>
 using namespace std;
+
 int main () {
     int mat[100][100];
     // taking input for matrix 
