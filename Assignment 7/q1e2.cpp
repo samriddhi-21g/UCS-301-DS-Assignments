@@ -1,22 +1,23 @@
-//quick sort when pivot element is last element
+// quick sort when pivot element is first element
 
 #include <bits/stdc++.h>
 using namespace std;
 
 // Function to place pivot at correct position
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high];     // choose last element as pivot
-    int i = low - 1;
+    int pivot = arr[low];     // choose first element as pivot
+    int i = low + 1;
 
-    for (int j = low; j < high; j++) {
+    for (int j = low + 1; j <= high; j++) {
         if (arr[j] <= pivot) {
-            i++;
             swap(arr[i], arr[j]);
+            i++;
         }
     }
 
-    swap(arr[i + 1], arr[high]); // place pivot correctly
-    return i + 1;
+    // place pivot at correct position
+    swap(arr[low], arr[i - 1]);
+    return i - 1;
 }
 
 // Quick Sort function

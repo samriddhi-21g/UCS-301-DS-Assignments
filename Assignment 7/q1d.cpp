@@ -25,6 +25,7 @@ void merge(vector<int> &arr, int l, int m, int h){
       k++, j++;
     }
   }
+  
   while(i < n1){
     arr[k] = L[i];
     k++, i++;

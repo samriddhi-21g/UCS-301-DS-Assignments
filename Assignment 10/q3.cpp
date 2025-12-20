@@ -17,7 +17,11 @@ vector<int> dfsOfGraph (int n, vector<int> adj[]) {
     int vis[n+1]={0};
     int start = 1;
     vector<int> dfs;
-    dfss(start,adj,vis,dfs);
+    for (int i = 1; i <= n; i++) {
+        if (!vis[i]) {
+            dfss(i, adj, vis, dfs);
+        }
+    }
     return dfs;
 }
 
